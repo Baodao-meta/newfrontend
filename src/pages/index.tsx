@@ -12,8 +12,10 @@ import TopCurrencyTable from '@/components/top-currency/currency-table';
 import { coinSlideData } from '@/data/static/coin-slide-data';
 import Avatar from '@/components/ui/avatar';
 import TopupButton from '@/components/ui/topup-button';
+import CoinList from '../data/static/CoinData'
 //images
 import AuthorImage from '@/assets/images/author.jpg';
+import { useEffect, useState } from 'react';
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
@@ -21,9 +23,23 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
+
 const HomePage: NextPageWithLayout<
   InferGetStaticPropsType<typeof getStaticProps>
 > = () => {
+
+  const [result,setResult] = useState([])
+
+  useEffect(()=>{
+    fetchData()
+  },[])
+
+  async function fetchData(){
+    let data = await CoinList()
+    setResult(data)
+  }
+
+  console.log(result)
   return (
     <>
       <NextSeo
@@ -31,9 +47,14 @@ const HomePage: NextPageWithLayout<
         description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
       />
       <div className="flex flex-wrap">
+          {
+            result != null ?
         <div className="mb-8 w-full sm:mb-0 sm:w-1/2 sm:ltr:pr-6 sm:rtl:pl-6 md:w-[calc(100%-256px)] lg:w-[calc(100%-288px)] 2xl:w-[calc(100%-320px)] 3xl:w-[calc(100%-358px)]">
-          <CoinSlider coins={coinSlideData} />
+            <CoinSlider coins={result} />
         </div>
+        :
+        null
+          }
         <div className="w-full sm:w-1/2 md:w-64 lg:w-72 2xl:w-80 3xl:w-[358px]">
           <div className="flex h-full flex-col justify-center rounded-lg bg-white p-6 shadow-card dark:bg-light-dark xl:p-8">
             <Avatar

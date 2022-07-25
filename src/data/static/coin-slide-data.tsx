@@ -2,7 +2,7 @@
 import BitcoinImage from '@/assets/images/coin/bitcoin.svg';
 import TetherImage from '@/assets/images/coin/tether.svg';
 import CardanoImage from '@/assets/images/coin/cardano.svg';
-import BinanceImage from '@/assets/images/coin/binance.svg';
+import EthereumImage from '@/assets/images/coin/ethereum.svg';
 
 export const coinSlideData = [
   {
@@ -10,7 +10,7 @@ export const coinSlideData = [
     name: 'Bitcoin',
     symbol: 'BTC',
     balance: '0.2231345',
-    usdBalance: '11,032.24',
+    usdBalance: `{data[0]["bitcoin"].usd}`,
     logo: BitcoinImage,
     change: '+12.5%',
     isChangePositive: true,
@@ -21,7 +21,7 @@ export const coinSlideData = [
     name: 'Tether',
     symbol: 'USDT',
     balance: '1.2345',
-    usdBalance: '1,032.24',
+    usdBalance: `{data[0]["tether"].usd}`,
     logo: TetherImage,
     change: '-1.5%',
     isChangePositive: false,
@@ -32,7 +32,7 @@ export const coinSlideData = [
     name: 'Cardano',
     symbol: 'ADA',
     balance: '1.2370',
-    usdBalance: '532.94',
+    usdBalance: `{data[0]["cardano"].usd}`,
     logo: CardanoImage,
     change: '+12.5%',
     isChangePositive: true,
@@ -40,13 +40,14 @@ export const coinSlideData = [
   },
   {
     id: '3',
-    name: 'Binance',
-    symbol: 'BUSD',
-    balance: '240.55',
+    name: 'Ethereum',
+    symbol: 'ETH',
+    balance: '',
     usdBalance: '340.24',
-    logo: BinanceImage,
+    logo: EthereumImage,
     change: '+1.5%',
     isChangePositive: true,
     color: '#FBF5D5',
   },
 ];
+

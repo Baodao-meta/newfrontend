@@ -1,0 +1,145 @@
+import axios from "axios";
+
+const DTopCurrencyData = async() =>{
+    let top7 = await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=7&page=1&sparkline=false&price_change_percentage=24h")
+
+    let result = 
+    [
+        {
+            id: 1,
+            coin: {
+                icon: top7.data[0]["image"],
+                name: top7.data[0]["name"],
+                symbol: top7.data[0]["symbol"],
+            },
+    prices: [
+      { name: 1, value: 15187.44 },
+      { name: 2, value: 21356.99 },
+      { name: 3, value: 34698.98 },
+      { name: 4, value: 37587.55 },
+      { name: 5, value: 17577.4 },
+      { name: 6, value: 26577.4 },
+      { name: 7, value: 23577.4 },
+      { name: 8, value: 18577.4 },
+      { name: 9, value: 28577.4 },
+    ],
+    usd_price: top7.data[0]["current_price"],
+    usd_price_change_24h: top7.data[0]["price_change_percentage_24h"],
+    usd_marketcap: top7.data[0]["market_cap"],
+},
+{
+    id: 2,
+    coin: {
+         icon: top7.data[1]["image"], 
+         symbol: top7.data[1]["name"],
+         name: top7.data[1]["symbol"] },
+    prices: [
+        { name: 1, value: 25187.44 },
+        { name: 2, value: 67356.99 },
+        { name: 3, value: 34698.98 },
+        { name: 4, value: 37587.55 },
+        { name: 5, value: 27577.4 },
+      { name: 6, value: 55577.4 },
+      { name: 7, value: 48577.4 },
+      { name: 8, value: 28577.4 },
+      { name: 9, value: 61577.4 },
+    ],
+    usd_price: top7.data[1]["current_price"],
+    usd_price_change_24h: top7.data[1]["price_change_percentage_24h"],
+    usd_marketcap: top7.data[1]["market_cap"],
+},
+{
+    id: 3,
+    coin: { icon: top7.data[2]["image"], symbol: top7.data[2]["symbol"], name: top7.data[2]["name"] },
+    prices: [
+        { name: 1, value: 12187.44 },
+        { name: 2, value: 21356.99 },
+        { name: 3, value: 37698.98 },
+        { name: 4, value: 39587.55 },
+        { name: 5, value: 29577.4 },
+        { name: 6, value: 31577.4 },
+        { name: 7, value: 47577.4 },
+        { name: 8, value: 36577.4 },
+        { name: 9, value: 28577.4 },
+    ],
+    usd_price: top7.data[2]["current_price"],
+    usd_price_change_24h: top7.data[2]["price_change_percentage_24h"],
+    usd_marketcap: top7.data[2]["market_cap"],
+},
+{
+    id: 4,
+    coin: { icon: top7.data[3]['image'], symbol: top7.data[3]['symbol'], name: top7.data[3]['name'] },
+    prices: [
+        { name: 1, value: 15187.44 },
+        { name: 2, value: 16356.99 },
+        { name: 3, value: 17698.98 },
+        { name: 4, value: 37587.55 },
+      { name: 5, value: 17577.4 },
+      { name: 6, value: 20577.4 },
+      { name: 7, value: 29577.4 },
+      { name: 8, value: 33577.4 },
+      { name: 9, value: 39577.4 },
+    ],
+    usd_price: top7.data[3]['current_price'],
+    usd_price_change_24h: top7.data[3]['price_change_percentage_24h'],
+    usd_marketcap: top7.data[3]['market_cap'],
+},
+{
+    id: 5,
+    coin: { icon: top7.data[4]['image'], symbol: top7.data[4]['symbol'], name: top7.data[4]['name'] },
+    prices: [
+        { name: 1, value: 10187.44 },
+        { name: 2, value: 21356.99 },
+        { name: 3, value: 34698.98 },
+        { name: 4, value: 35587.55 },
+        { name: 5, value: 45577.4 },
+        { name: 6, value: 39577.4 },
+        { name: 7, value: 28577.4 },
+        { name: 8, value: 33577.4 },
+      { name: 9, value: 20577.4 },
+    ],
+    usd_price: top7.data[4]['current_price'],
+    usd_price_change_24h: top7.data[4]['price_change_percentage_24h'],
+    usd_marketcap: top7.data[4]['market_cap'],
+},
+{
+    id: 6,
+    coin: { icon: top7.data[5]['image'], symbol: top7.data[5]['symbol'], name: top7.data[5]['name'] },
+    prices: [
+        { name: 1, value: 25187.44 },
+        { name: 2, value: 21356.99 },
+        { name: 3, value: 34698.98 },
+        { name: 4, value: 37587.55 },
+        { name: 5, value: 17577.4 },
+        { name: 6, value: 26577.4 },
+        { name: 7, value: 23577.4 },
+        { name: 8, value: 18577.4 },
+        { name: 9, value: 28577.4 },
+    ],
+    usd_price: top7.data[5]['current_price'],
+    usd_price_change_24h: top7.data[5]['price_change_percentage_24h'],
+    usd_marketcap: top7.data[5]['market_cap'],
+},
+{
+    id: 7,
+    coin: { icon: top7.data[6]['image'], symbol: top7.data[6]['symbol'], name: top7.data[6]['name'] },
+    prices: [
+        { name: 1, value: 9187.44 },
+        { name: 2, value: 21356.99 },
+        { name: 3, value: 34698.98 },
+        { name: 4, value: 37587.55 },
+        { name: 5, value: 17577.4 },
+        { name: 6, value: 55577.4 },
+        { name: 7, value: 49577.4 },
+        { name: 8, value: 28577.4 },
+        { name: 9, value: 28577.4 },
+    ],
+    usd_price: top7.data[6]['current_price'],
+    usd_price_change_24h: top7.data[6]['price_change_percentage_24h'],
+    usd_marketcap: top7.data[6]['market_cap'],
+},
+];
+    return result
+} 
+
+export default DTopCurrencyData

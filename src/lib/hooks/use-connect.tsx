@@ -20,6 +20,7 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
       try {
         if (window && window.ethereum) {
           // Check if web3modal wallet connection is available on storage
+          if(window.ethereum.chainId != "0x13881")  
           if (localStorage.getItem(web3modalStorageKey)) {
             await connectToWallet();
           }

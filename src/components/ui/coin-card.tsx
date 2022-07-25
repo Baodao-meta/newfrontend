@@ -1,6 +1,6 @@
 import Image from '@/components/ui/image';
 import { ArrowUp } from '@/components/icons/arrow-up';
-import { Scrollbar, A11y } from 'swiper';
+import { Scrollbar, A11y ,Autoplay} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { StaticImageData } from 'next/image';
 
@@ -61,7 +61,7 @@ export function CoinCard({
           >
             <ArrowUp />
           </span>
-          {change}
+          {change.slice(0,4)}
         </span>
       </div>
     </div>
@@ -106,6 +106,8 @@ export default function CoinSlider({ coins }: CoinSliderProps) {
         breakpoints={sliderBreakPoints}
         observer={true}
         dir="ltr"
+        modules={[Autoplay]}
+        autoplay={{delay:2000}}
       >
         {coins.map((coin) => (
           <SwiperSlide key={coin.id}>

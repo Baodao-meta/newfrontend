@@ -26,16 +26,16 @@ const menuItems = [
     name: 'Home',
     icon: <HomeIcon />,
     href: routes.home,
-    dropdownItems: [
-      {
-        name: 'Modern',
-        href: routes.home,
-      },
-      {
-        name: 'Minimal',
-        href: routes.minimal,
-      },
-    ],
+    // dropdownItems: [
+    //   {
+    //     name: 'Modern',
+    //     href: routes.home,
+    //   },
+    //   {
+    //     name: 'Minimal',
+    //     href: routes.minimal,
+    //   },
+    // ],
   },
   {
     name: 'Farm',
